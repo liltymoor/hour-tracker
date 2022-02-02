@@ -1,0 +1,9 @@
+C:\Users\Тимус\source\repos\HourBinary\bin\Debug\HourBinary.dll
+C:\Users\Тимус\source\repos\HourBinary\bin\Debug\HourBinary.pdb
+C:\Users\Тимус\source\repos\HourBinary\bin\Debug\Time.dll
+C:\Users\Тимус\source\repos\HourBinary\bin\Debug\Time.pdb
+C:\Users\Тимус\source\repos\HourBinary\obj\Debug\HourBinary.csprojAssemblyReference.cache
+C:\Users\Тимус\source\repos\HourBinary\obj\Debug\HourBinary.csproj.CoreCompileInputs.cache
+C:\Users\Тимус\source\repos\HourBinary\obj\Debug\HourBinary.csproj.CopyComplete
+C:\Users\Тимус\source\repos\HourBinary\obj\Debug\HourBinary.dll
+C:\Users\Тимус\source\repos\HourBinary\obj\Debug\HourBinary.pdb
