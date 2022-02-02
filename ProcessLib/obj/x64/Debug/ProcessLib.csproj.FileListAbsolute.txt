@@ -1,0 +1,11 @@
+C:\Users\Тимус\source\repos\ProcessLib\bin\x64\Debug\ProcessLib.dll
+C:\Users\Тимус\source\repos\ProcessLib\bin\x64\Debug\ProcessLib.pdb
+C:\Users\Тимус\source\repos\ProcessLib\bin\x64\Debug\HourBinary.dll
+C:\Users\Тимус\source\repos\ProcessLib\bin\x64\Debug\Time.dll
+C:\Users\Тимус\source\repos\ProcessLib\bin\x64\Debug\HourBinary.pdb
+C:\Users\Тимус\source\repos\ProcessLib\bin\x64\Debug\Time.pdb
+C:\Users\Тимус\source\repos\ProcessLib\obj\x64\Debug\ProcessLib.csprojAssemblyReference.cache
+C:\Users\Тимус\source\repos\ProcessLib\obj\x64\Debug\ProcessLib.csproj.CoreCompileInputs.cache
+C:\Users\Тимус\source\repos\ProcessLib\obj\x64\Debug\ProcessLib.csproj.CopyComplete
+C:\Users\Тимус\source\repos\ProcessLib\obj\x64\Debug\ProcessLib.dll
+C:\Users\Тимус\source\repos\ProcessLib\obj\x64\Debug\ProcessLib.pdb
