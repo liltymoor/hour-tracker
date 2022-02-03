@@ -1,0 +1,5 @@
+C:\Users\Тимус\source\repos\Time\bin\Debug\Time.dll
+C:\Users\Тимус\source\repos\Time\bin\Debug\Time.pdb
+C:\Users\Тимус\source\repos\Time\obj\Debug\Time.csproj.CoreCompileInputs.cache
+C:\Users\Тимус\source\repos\Time\obj\Debug\Time.dll
+C:\Users\Тимус\source\repos\Time\obj\Debug\Time.pdb
