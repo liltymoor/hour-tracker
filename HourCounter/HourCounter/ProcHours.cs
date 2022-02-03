@@ -306,7 +306,7 @@ namespace HourCounter
 
         private void gitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://github.com");    
+            Process.Start("https://github.com/liltymoor/hour-tracker/");    
         }
         internal string GetSystemDefaultBrowser()
         {
