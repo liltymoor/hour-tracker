@@ -1,6 +1,6 @@
 C:\Users\Тимус\source\repos\Time\bin\x64\Release\Time.dll
 C:\Users\Тимус\source\repos\Time\bin\x64\Release\Time.pdb
-C:\Users\Тимус\source\repos\Time\obj\x64\Release\Time.csprojAssemblyReference.cache
 C:\Users\Тимус\source\repos\Time\obj\x64\Release\Time.csproj.CoreCompileInputs.cache
 C:\Users\Тимус\source\repos\Time\obj\x64\Release\Time.dll
 C:\Users\Тимус\source\repos\Time\obj\x64\Release\Time.pdb
+C:\Users\Тимус\source\repos\Time\obj\x64\Release\Time.csproj.AssemblyReference.cache

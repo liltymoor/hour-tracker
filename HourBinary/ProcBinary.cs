@@ -35,6 +35,11 @@ namespace HourBinary
         [NonSerialized]
         static Encoding encoding = System.Text.Encoding.GetEncoding(1251);
 
+        public void RenewStartDate(Time time)
+        {
+            timeFrom = Convert.ToInt64(time.ToSeconds());
+        }
+
         private static byte[] StringToByte(string s)
         {
             char[] ar = new char[s.Length];

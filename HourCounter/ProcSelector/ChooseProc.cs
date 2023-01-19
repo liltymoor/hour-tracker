@@ -10,6 +10,14 @@ namespace HourCounter
         HourCounter mainForm;
         IProcess selectedProc = null;
 
+        TimeLib.Time renewProcessTime = null;
+        TimeLib.Time renewProcessFromTime = null;
+
+        public TimeLib.Time RenewProcess
+        {
+            set { renewProcessTime = value; }
+        }
+
         public IProcess selResult
         {
             get { return selectedProc; }
@@ -93,7 +101,13 @@ namespace HourCounter
                 return;
             else
             {
-                mainForm.AddSelectedProc(selectedProc);
+                if (renewProcessTime != null)
+                {
+                    selectedProc.timeIn = renewProcessTime;
+                    mainForm.AddSelectedProc(selectedProc, renewProcessFromTime);
+                }
+                else
+                    mainForm.AddSelectedProc(selectedProc);
                 mainForm.CanChoose = true;
                 this.Close();
             }

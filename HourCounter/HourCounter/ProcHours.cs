@@ -92,12 +92,30 @@ namespace HourCounter
             ProcBinary newProc = new ProcBinary(
                 (proc.proc.MainWindowTitle == "" ? proc.proc.ProcessName : proc.proc.MainWindowTitle),
                 proc.proc.MainModule.FileName);
-
+            
             newProc.Save_Result(binaryPath);
 
             trackingList.Add(newProc);
             trackList.Items.Add(newProc);
         }
+
+        //To renew the existing one
+        public void AddSelectedProc(IProcess proc, TimeLib.Time timeFrom)
+        {
+            if (proc == null)
+                return;
+
+            ProcBinary newProc = new ProcBinary(
+                (proc.proc.MainWindowTitle == "" ? proc.proc.ProcessName : proc.proc.MainWindowTitle),
+                proc.proc.MainModule.FileName);
+
+            newProc.RenewStartDate(timeFrom);
+            newProc.Save_Result(binaryPath);
+
+            trackingList.Add(newProc);
+            trackList.Items.Add(newProc);
+        }
+
 
         public void AddSelectedProc(ProcBinary proc)
         {
@@ -197,6 +215,25 @@ namespace HourCounter
                 return;
             foreach (ProcBinary proc in trackingList)
             {
+                if (!System.IO.File.Exists(proc.ProcPath))
+                {
+                    timer1.Enabled = false;
+                    DialogResult dialogResult = MessageBox.Show("Process " + proc.ProcName + " was not found in properly way. \nClick 'Yes', if you want to delete it. \nClick 'No' if you want to pick a new instance of process", "Process expectation problem", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.No)
+                    {
+                        form = new ChooseProc();
+                        form.Owner = this;
+                        form.Show();
+                        form.RenewProcess = proc.TimeIn;
+                        
+                        chooseProc.Enabled = false;
+                    }
+                    timer1.Enabled = true;
+                    RemoveProc(proc);
+                    continue;
+
+                }
+
                 bool value = false;
                 Thread condition = new Thread(() =>
                 {
@@ -262,9 +299,13 @@ namespace HourCounter
             }
             else
             {
-                pictureBox1.Visible = true;
-                e.Graphics.DrawIcon(IProcess.ResizeIcon(Icon.ExtractAssociatedIcon(selProc.ProcPath),
-                    new Size(64, 64)), new Rectangle(0, 0, 64, 64));
+                try
+                {
+                    pictureBox1.Visible = true;
+                    e.Graphics.DrawIcon(IProcess.ResizeIcon(Icon.ExtractAssociatedIcon(selProc.ProcPath),
+                        new Size(64, 64)), new Rectangle(0, 0, 64, 64));
+                }
+                catch { }
             }
             Console.WriteLine("Draw completed");
         }
@@ -277,6 +318,17 @@ namespace HourCounter
             ProcBinary.TruncateBinary(binaryPath);
             trackingList.Remove(selProc);
             trackList.Items.Remove(selProc);
+            SaveTrackersT();
+            LoadBinary();
+            timer1.Enabled = true;
+        }
+
+        private void RemoveProc(ProcBinary procToDelete)
+        {
+            timer1.Enabled = false;
+            ProcBinary.TruncateBinary(binaryPath);
+            trackingList.Remove(procToDelete);
+            trackList.Items.Remove(procToDelete);
             SaveTrackersT();
             LoadBinary();
             timer1.Enabled = true;
@@ -306,7 +358,7 @@ namespace HourCounter
 
         private void gitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/liltymoor/hour-tracker/");    
+            Process.Start("https://github.com/liltymoor/hour-tracker");    
         }
         internal string GetSystemDefaultBrowser()
         {
